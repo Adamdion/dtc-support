@@ -1,0 +1,55 @@
+{
+    "glueJobs":
+                {
+                    "ejgallo-lake-dtc-tock-to-mudroom": 
+                        ["trn", "bp", "trn","dd"],
+                    "ejgallo-lake-dtc-create-source-tables-sf-mudroom": 
+                        ["ACCOUNT","ACCOUNTFEED","CAMPAIGN","CAMPAIGNMEMBERSTATUS","CASE","CONTACT","EMAIL_TEMPLATE","EVENT","FULFILLMENT_ORDER","FULFILLMENT_ORDER_FEED","FULFILLMENT_ORDER_ITEM_ADJUSTMENT","FULFILLMENT_ORDER_ITEM_TAX","FULFILLMENT_ORDER_LINE_ITEM","ORDER","ORDER_ADJUSTMENT_GROUP","ORDER_ADJUSTMENT_GROUP_SUMMARY","ORDER_ADJUSTMENT_LINE_ITEM","ORDER_ADJUSTMENT_LINE_SUMMARY","ORDER_CHANGE_LOG","ORDER_DELIVERY_GROUP","ORDER_DELIVERY_GROUP_SUMMARY","ORDER_DELIVERY_METHOD","ORDER_ITEM","ORDER_ITEM_SUMMARY","ORDER_ITEM_SUMMARY_CHANGE","ORDER_ITEM_SUMMARY_FEED","ORDER_ITEM_TAX_LINE_ITEM","ORDER_ITEM_TAX_LINE_ITEM_SUMMARY","ORDER_SUMMARY","ORDER_SUMMARY_FEED","PERSON_ACCOUNT_SITE","PRICEBOOK","PRICEBOOK_ENTRY","PRODUCT","SALES_CHANNEL","STORE","SURVEY","SURVEY_QUESTION","SURVEY_RESPONSE","WAITLIST","WEBLINK","WINE_CLUB","WINE_CLUB_MEMBERSHIP","WINE_SHIPPING_SERVICE"],
+                    "ejgallo-lake-dtc-fetch-to-mudroom": 
+                        ["FETCH_OFFER","FETCH_OFFER_USAGE","FETCH_USERS", "FETCH_REWARDS_RECEIPT", "FETCH_REWARDS_RECEIPT_ITEM","FETCH_BARCODE_LOOKUP","FETCH_MANIFEST"],
+                    "ejgallo-lake-dtc-beaconstac-to-mudroom":
+                        ["performance","locationDistribution","visitorDistribution","visitorDistributionRaw","cityDistribution","allQRCodes","osDistribution","allTags"],
+                    "ejgallo-lake-dtc-create-tables-arrowhead-to-mudroom":
+                        ["IRC","MIR"],
+                    "ejgallo-lake-dtc-create-tables-antares":
+                        [],
+                    "ejgallo-lake-dtc-create-tales-luxary-AMS-EWINERY":
+                        ["SHIPPING","SALES","EWINERY","WINEDIRECT"],
+                    "ejgallo-lake-dtc-create-tables-ga4":
+                    ["GA4_EVENT_COLLECTED_TRAFFIC_SOURCE","GA4_EVENT_DEVICE","GA4_EVENT_ECOMMERCE","GA4_EVENT_GEO","GA4_EVENT_ITEMS","GA4_EVENT_PARAMS","GA4_EVENT_TRAFFIC_SOURCE","GA4_EVENT_USER_PROPERTIES","GA4_PSEUDONYMOUS_USERS","GA4_USERS"],
+                    "ejgallo-lake-dtc-create-tables-sfmc-to-mudroom":
+                        ["SFMC_ATTRIBUTES","SFMC_BOUNCES","SFMC_CLICKIMPRESSION","SFMC_CLICKS","SFMC_COMPLAINTS","SFMC_CONVERSIONS","SFMC_LISTMEMBERSHIP","SFMC_LISTS","SFMC_MULTIPLEDATAEXTENSIONSENDLISTS","SFMC_NOTSENT","SFMC_OPENS","SFMC_SENDIMPRESSION","SFMC_SENDJOBIMPRESSION","SFMC_SENDJOBS","SFMC_SENT","SFMC_STATUSCHANGE","SFMC_SUBSCRIBERS","SFMC_SURVEYS","SFMC_UNSUBS"],
+                    "ejgallo-lake-dtc-create-tables-sfmcde-to-mudroom":
+                        ["SFMC_DE_ZINRELO_ENGAGEMENT_STATUS"],
+                    "ejgallo-lake-dtc-create-tables-sfmcdv-to-mudroom":
+                        ["SFMC_DV_SUBSCRIBERS","SFMC_DV_ENTERPRISE_ATTRIBUTE","SFMC_DV_BUSINESS_UNIT_UNSUBSCRIBES","SFMC_DV_JOB","SFMC_DV_SENT","SFMC_DV_LIST_SUBSCRUBERS","SFMC_DV_BOUNCE","SFMC_DV_CLICK","SFMC_DV_UNSUBSCRIBE","SFMC_DV_COMPLAINT","SFMC_DV_SURVERY_RESPONSE","SFMC_DV_OPEN","SFMC_DV_JOURNEY_ACTIVITY","SFMC_DV_COUPON","SFMC_DV_FTAF","SFMC_DV_SMS_SUBSCRIPTION_LOG","SFMC_DV_SMS_MESSAGE_TRACKING","SFMC_DV_UNDELIVERABLE_SMS","SFMC_DV_SOCIAL_NETWORK_IMPRESSIONS","SFMC_DV_SOCIAL_NETWORK_TRACKING","SFMC_DV_MOBILE_LINE_ADDRESS_CONTACT_SUBSCRIPTION_VIEW","SFMC_DV_MOBILE_LINE_ORPHAN_CONTACT_VIEW"],
+                    "ejgallo-lake-dtc-create-tables-zinrelo-disengaged":
+                        [],
+                    "ejgallo-lake-dtc-create-tables-mudroom-um-exports":
+                        [],
+                    "ejgallo-lake-dtc-reserve-bar-to-mudroom":
+                        ["RESERVERBAR_ORDERS"],
+                    "ejgallo-lake-dtc-moosy-sweepstackes-to-mudroom":
+                        ["MOOSY_SWEEPSENTRY"],
+                    "ejgallo-lake-dtc-moosy-subscribers-to-mudroom":
+                        ["MOOSY_SUBSCRIBERS"]
+                },
+    "procedures":
+                {
+                    "Tock":["tock_trn","tock_bp","tock_dd","tock_res"],
+                    "Salesforce": ["sf7_account","sf7_address_book","sf7_contact","sf7_lead","sf7_order","sf7_order_item","sf7_product","sf7_wine_club_membership","sf8_account","sf8_accountfeed","sf8_campaign","sf8_campaignmemberstatus","sf8_case","sf8_contact","sf8_event","sf8_fulfillment_order","sf8_fulfillment_order_feed","sf8_fulfillment_order_item_adjustment","sf8_fulfillment_order_item_tax","sf8_fulfillment_order_line_item","sf8_order","sf8_order_adjustment_group","sf8_order_adjustment_group_summary","sf8_order_adjustment_line_summary","sf8_order_change_log","sf8_order_delivery_group","sf8_order_delivery_group_summary","sf8_order_delivery_method","sf8_order_item","sf8_order_item_summary","sf8_order_item_summary_change","sf8_order_item_summary_feed","sf8_order_item_tax_line_item","sf8_order_item_tax_line_item_summary","sf8_order_summary","sf8_order_summary_feed","sf8_person_account_site","sf8_pricebook","sf8_pricebook_entry","sf8_product","sf8_sales_channel","sf8_store","sf8_weblink","sf8_wine_club","sf8_wine_club_membership","sf8_wine_shipping_service"],
+                    "Fetch": ["fetch_offer","fetch_offer_usage","fetch_users","fetch_rewards_receipt","fetch_rewards_receipt_item","fetch_barcode_lookup","fetch_manifest"],
+                    "Beaconstac": ["beaconstac_location","beaconstac_performance","beaconstac_city_distribution","beaconstac_os_distribution","beaconstac_qr_codes","beaconstac_tags","beaconstac_visitor_distribution"],
+                    "Arrowhead": ["arrowhead_irc","arrowhead_mir"],
+                    "Antares": ["antares_qr"],
+                    "Luxary": ["luxary_ams_sales","luxary_ams_shipping","luxary_ewinery","luxary_winedirect"],
+                    "Ga4": ["ga4_event_collected_traffic_source","ga4_event_device","ga4_event_ecommerce","ga4_event_geo","ga4_event_items","ga4_event_params","ga4_event_traffic_source","ga4_event_user_properties","ga4_pseudonymous_users"],
+                    "UM": ["um_exports"],
+                    "SFMC": ["sfmc_attributes","sfmc_bounces","sfmc_clickimpression","sfmc_clicks","sfmc_complaints","sfmc_conversions","sfmc_listmembership","sfmc_lists","sfmc_multipledataextensionsendlists","sfmc_notsent","sfmc_opens","sfmc_sendimpression","sfmc_sendjobimpression","sfmc_sendjobs","sfmc_sent","sfmc_statuschange","sfmc_subscribers","sfmc_surveys","sfmc_unsubs"],
+                    "SFMC DE": ["sfmc_de_zinrelo_engagement_status"],
+                    "SFMC DV": ["sfmc_dv_subscribers","sfmc_dv_enterprise_attribute","sfmc_dv_business_unit_unsubscribes","sfmc_dv_job","sfmc_dv_sent","sfmc_dv_list_subscrubers","sfmc_dv_bounce","sfmc_dv_click","sfmc_dv_unsubscribe","sfmc_dv_complaint","sfmc_dv_survery_response","sfmc_dv_open","sfmc_dv_journey_activity","sfmc_dv_coupon","sfmc_dv_ftaf","sfmc_dv_sms_subscription_log","sfmc_dv_sms_message_tracking","sfmc_dv_undeliverable_sms","sfmc_dv_social_network_impressions","sfmc_dv_social_network_tracking","sfmc_dv_mobile_line_address_contact_subscription_view","sfmc_dv_mobile_line_orphan_contact_view"],
+                    "Reserve Bar": ["reservebar_orders"],
+                    "Moosy Sweepstackes": ["moosy_sweepsentry"],
+                    "Moosy Subscribers": ["moosy_subscribers"]
+                }
+}
