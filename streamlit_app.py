@@ -7,7 +7,6 @@ import json
 today = datetime.date.today()
 tomorrow = today + datetime.timedelta(days=1)
 
-
 def runAPI(job_name='', table_names=[], specific_date='',date_range=(today,tomorrow),run_type='',job_id=None):
     """
     Function to call API to start reloads
@@ -57,8 +56,9 @@ def run_main_page():
     Main for streamlit app to Re-Execute glue jobs and Procedures
     """
     st.title("DTC Re Execution App")
-    glue_ran = False
-    job_id = ''
+
+    if 'job_id' not in st.session_state:
+        st.session_state.job_id = ''
 
     # Read in json of jobs and tables
     with open('execution-data.json', 'r') as f:
@@ -81,14 +81,12 @@ def run_main_page():
                             ' ejgallo-lake-dtc-create-tables-mudroom-um-exports']:
                 if st.button("Submit"):
                     result = runAPI(selected_job, [],None,(today,tomorrow),'Start')
-                    glue_ran = True
                     st.write(result)
         elif selected_job == 'ejgallo-lake-dtc-beaconstac-to-mudroom':
             selected_table = st.multiselect("Select Table", table_names)
 
             if st.button("Submit",key="button1"):
                 result = runAPI(selected_job, selected_table, None, (today,tomorrow),'Start')
-                glue_ran = True
                 st.write(result)
         else:
             # Get the table names for the selected job
@@ -102,25 +100,17 @@ def run_main_page():
 
             if st.button("Submit", key="button1"):
                 result = runAPI(selected_job, selected_table, selected_date, selected_date_range,'Start')
-                glue_ran = True
                 st.write(result)
-                job_id = result.get("JobRunId")
-                print(f'Early Job ID: {job_id}')
+                st.session_state.job_id = result.get("JobRunId", "")
 
-        st.subheader("Chcek Status")
-        if glue_ran:
-            print(f"Job Ran: {result['JobRunId']}")
-            # job_id = st.text_input("Job Id",value=result['JobRunId'])
-            # job_id = result['JobRunId']
-            print(f"job_id: {job_id}")
-        # else:
-        #     job_id = st.text_input("Job Id")
+        st.subheader("Check Status")
 
         if st.button("Submit", key="button2"):
-            print(f"Job ID: {job_id}")
+            print(f"Job ID session state: {st.session_state.job_id}")
+
             # Checks status
-            if job_id != '':
-                result = runAPI(job_name=selected_job,run_type='Status',job_id=job_id)
+            if st.session_state.job_id != '':
+                result = runAPI(job_name=selected_job, run_type='Status', job_id=st.session_state.job_id)
                 st.write(result)
             else:
                 st.error("Run a glue job first")
